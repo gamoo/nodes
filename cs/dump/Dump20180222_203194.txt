@@ -1,0 +1,299 @@
+Opened log file 'D:\dev\github\gamoo\nodes\cs\dump\Dump20180222_203194.txt'
+
+Microsoft (R) Windows Debugger Version 10.0.16299.15 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [D:\dev\github\gamoo\nodes\cs\dump\Dump20180222_203194.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 16299 MP (8 procs) Free x86 compatible
+Product: WinNt, suite: SingleUserTS
+16299.15.x86fre.rs3_release.170928-1534
+Machine Name:
+Debug session time: Thu Feb 22 15:28:56.000 2018 (UTC + 9:00)
+System Uptime: not available
+Process Uptime: 0 days 0:00:28.000
+................................................................
+................................................................
+..........
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(5a10.7d64): Access violation - code c0000005 (first/second chance not available)
+eax=00000000 ebx=15234720 ecx=00000000 edx=0cc9d820 esi=000002cc edi=15234710
+eip=7732f62c esp=0cc9c334 ebp=0cc9c340 iopl=0         nv up ei pl nz na po nc
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
+ntdll!NtGetContextThread+0xc:
+7732f62c c20800          ret     8
+0:015> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+*** WARNING: Unable to verify checksum for MobigoSecureApp.exe
+*** WARNING: Unable to verify timestamp for mfc120d.dll
+GetUrlPageData2 (WinHttp) failed: 12002.
+
+DUMP_CLASS: 2
+
+DUMP_QUALIFIER: 400
+
+CONTEXT:  (.ecxr)
+.ecxr
+eax=00000000 ebx=00000000 ecx=00000000 edx=0cc9d820 esi=0cc9de60 edi=0cc9de4c
+eip=04aecdcc esp=0cc9de60 ebp=0cc9e0a0 iopl=0         nv up ei pl zr na pe nc
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010246
+MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+0x70c:
+04aecdcc c7000a000000    mov     dword ptr [eax],0Ah  ds:002b:00000000=????????
+.cxr
+Resetting default scope
+
+FAULTING_IP: 
+MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+70c
+04aecdcc c7000a000000    mov     dword ptr [eax],0Ah
+
+EXCEPTION_RECORD:  (.exr -1)
+.exr -1
+ExceptionAddress: 04aecdcc (MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+0x0000070c)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 00000001
+   Parameter[1]: 00000000
+Attempt to write to address 00000000
+
+DEFAULT_BUCKET_ID:  NULL_POINTER_WRITE
+
+PROCESS_NAME:  MobigoSecureApp.exe
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  00000001
+
+EXCEPTION_PARAMETER2:  00000000
+
+FOLLOWUP_IP: 
+MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+70c
+04aecdcc c7000a000000    mov     dword ptr [eax],0Ah
+
+WRITE_ADDRESS:  00000000 
+
+WATSON_BKT_PROCSTAMP:  5a8e62e2
+
+WATSON_BKT_PROCVER:  1.0.0.1
+
+WATSON_BKT_MODULE:  MSecureKernel.dll
+
+WATSON_BKT_MODSTAMP:  5a8e62b0
+
+WATSON_BKT_MODOFFSET:  5fcdcc
+
+WATSON_BKT_MODVER:  7.1.179.0
+
+MODULE_VER_PRODUCT:  GionKernel
+
+BUILD_VERSION_STRING:  10.0.16299.64 (WinBuild.160101.0800)
+
+MODLIST_WITH_TSCHKSUM_HASH:  2c07d6c4a7d537aabaaccb70f0d3b7f96c7068a3
+
+MODLIST_SHA1_HASH:  87259a6d109dde28263133c80de1dfa60393c83f
+
+DUMP_FLAGS:  0
+
+DUMP_TYPE:  2
+
+ANALYSIS_SESSION_HOST:  DESKTOP-MK
+
+ANALYSIS_SESSION_TIME:  02-22-2018 20:31:32.0968
+
+ANALYSIS_VERSION: 10.0.16299.15 amd64fre
+
+THREAD_ATTRIBUTES: 
+PROBLEM_CLASSES: 
+
+    ID:     [0n301]
+    Type:   [@ACCESS_VIOLATION]
+    Class:  Addendum
+    Scope:  BUCKET_ID
+    Name:   Omit
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x7d64]
+    Frame:  [0] : MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+    ID:     [0n274]
+    Type:   [INVALID_POINTER_WRITE]
+    Class:  Primary
+    Scope:  BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x7d64]
+    Frame:  [0] : MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+    ID:     [0n289]
+    Type:   [NULL_POINTER_WRITE]
+    Class:  Primary
+    Scope:  DEFAULT_BUCKET_ID (Failure Bucket ID prefix)
+            BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [0x5a10]
+    TID:    [0x7d64]
+    Frame:  [0] : MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+BUGCHECK_STR:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE
+
+PRIMARY_PROBLEM_CLASS:  APPLICATION_FAULT
+
+LAST_CONTROL_TRANSFER:  from 04b30248 to 04aecdcc
+
+STACK_TEXT:  
+0cc9e0a0 04b30248 00000000 0cc9e258 5644050d MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+0x70c
+0cc9e28c 04809339 564401c5 0cc9e718 0cc9e724 MSecureKernel!MobigoSecure::Pattern::PatternWorker::Run+0x118
+0cc9e644 04808a4b 0cc9e9a8 0cc9e724 00000000 MSecureKernel!ExecutePattern+0x8c9
+0cc9e718 04541260 00000835 56440e39 0cc9ebc4 MSecureKernel!ExecutePattern+0x2b
+0cc9e9b8 04541e3e 00000835 0cc9ed18 0cc9eff4 MSecureKernel!MSCoreRuntime::_execute+0xb0
+0cc9ebc4 045410dc 00000835 00000001 56440aa5 MSecureKernel!MSCoreRuntime::_runPattern+0xde
+0cc9ed24 045408b2 00010001 00000001 56440915 MSecureKernel!MSCoreRuntime::_detectAuto+0x1ac
+0cc9ee94 047e80c9 00000004 0cc9f178 56440865 MSecureKernel!MSCoreRuntime::RunOperation+0x2d2
+0cc9efe4 0100a4dd 00000004 0cc9f178 45f137f5 MSecureKernel!MSecureKernel_DoOpr+0x79
+0cc9f1a8 01005e0c 00010001 00000078 45f13491 MobigoSecureApp!CKernelSmartCaller::DetectConnectedVendorIndex+0x28d
+0cc9f2cc 010043aa 00000001 45f1333d 0cc9f740 MobigoSecureApp!CKernelSmartController::DetectReadDevice+0x22c
+0cc9f560 04253d29 000000f0 00000001 175bc511 MobigoSecureApp!CKernelSmartController::OnSmartChangeDevice+0x44a
+0cc9f74c 04257784 0000b013 000000f0 00000001 mfc120d!CWnd::OnWndMsg+0xaa9
+0cc9f778 0424995b 0000b013 000000f0 00000001 mfc120d!CWnd::WindowProc+0x44
+0cc9f818 0424a955 0699c888 00191084 0000b013 mfc120d!AfxCallWndProc+0x10b
+0cc9f83c 03fb8edd 00191084 0000b013 000000f0 mfc120d!AfxWndProc+0xb5
+0cc9f878 7499e0bb 00191084 0000b013 000000f0 mfc120d!AfxWndProcBase+0x6d
+0cc9f8a4 749a8849 03fb8e70 00191084 0000b013 user32!_InternalCallWinProc+0x2b
+0cc9f8c8 749ab145 0000b013 000000f0 00000001 user32!InternalCallWinProc+0x20
+0cc9f998 749990dc 03fb8e70 00000000 0000b013 user32!UserCallWinProcCheckWow+0x1be
+0cc9fa04 749938c0 0cc9fa30 0421cc59 06a22990 user32!DispatchMessageWorker+0x4ac
+0cc9fa0c 0421cc59 06a22990 0cc9fa44 cccccccc user32!DispatchMessageA+0x10
+0cc9fa30 0421e033 0b257270 0cc9fa5c 0421e104 mfc120d!AfxInternalPumpMessage+0x129
+0cc9fa3c 0421e104 0cc9fa64 00000001 00000002 mfc120d!CWinThread::PumpMessage+0x13
+0cc9fa5c 0421e600 175bc911 0f1d37b0 0f1d37b0 mfc120d!CWinThread::Run+0xb4
+0cc9fb4c 0f1d3651 016ff55c 89d5454d 0f1d37b0 mfc120d!_AfxThreadEntry+0x3c0
+0cc9fb88 0f1d3861 0b280518 0cc9fba8 748c8654 MSVCR120D!_callthreadstartex+0x51
+0cc9fb94 748c8654 0b280518 748c8630 5bd7d0ba MSVCR120D!_threadstartex+0xb1
+0cc9fba8 77324a77 0b27e9c0 21999ebb 00000000 kernel32!BaseThreadInitThunk+0x24
+0cc9fbf0 77324a47 ffffffff 77349ed8 00000000 ntdll!__RtlUserThreadStart+0x2f
+0cc9fc00 00000000 0f1d37b0 0b27e9c0 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+
+THREAD_SHA1_HASH_MOD_FUNC:  ea562491074a3cf8f738c403696e225ff909dd37
+
+THREAD_SHA1_HASH_MOD_FUNC_OFFSET:  97c989722ccb26c816f77fc5ed42d120bc72d6b9
+
+THREAD_SHA1_HASH_MOD:  ef2e2eae9e8deeac3e826c8e8251eb68595c6d4f
+
+FAULT_INSTR_CODE:  a00c7
+
+FAULTING_SOURCE_LINE:  c:\work\project\mobigosecure\01.src\msecurekernel\mobigo_secure_kernel\msecurekernel\pattern\modelfinddetectandroid2101.cpp
+
+FAULTING_SOURCE_FILE:  c:\work\project\mobigosecure\01.src\msecurekernel\mobigo_secure_kernel\msecurekernel\pattern\modelfinddetectandroid2101.cpp
+
+FAULTING_SOURCE_LINE_NUMBER:  135
+
+SYMBOL_STACK_INDEX:  0
+
+SYMBOL_NAME:  MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+70c
+
+FOLLOWUP_NAME:  MachineOwner
+
+MODULE_NAME: MSecureKernel
+
+IMAGE_NAME:  MSecureKernel.dll
+
+DEBUG_FLR_IMAGE_TIMESTAMP:  5a8e62b0
+
+STACK_COMMAND:  ~15s ; .ecxr ; kb
+
+FAILURE_BUCKET_ID:  NULL_POINTER_WRITE_c0000005_MSecureKernel.dll!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+BUCKET_ID:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE_MSecureKernel!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment+70c
+
+FAILURE_EXCEPTION_CODE:  c0000005
+
+FAILURE_IMAGE_NAME:  MSecureKernel.dll
+
+BUCKET_ID_IMAGE_STR:  MSecureKernel.dll
+
+FAILURE_MODULE_NAME:  MSecureKernel
+
+BUCKET_ID_MODULE_STR:  MSecureKernel
+
+FAILURE_FUNCTION_NAME:  MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+BUCKET_ID_FUNCTION_STR:  MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+BUCKET_ID_OFFSET:  70c
+
+BUCKET_ID_MODPRIVATE: 1
+
+BUCKET_ID_MODTIMEDATESTAMP:  5a8e62b0
+
+BUCKET_ID_MODCHECKSUM:  0
+
+BUCKET_ID_MODVER_STR:  7.1.179.0
+
+BUCKET_ID_PREFIX_STR:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE_
+
+FAILURE_PROBLEM_CLASS:  APPLICATION_FAULT
+
+FAILURE_SYMBOL_NAME:  MSecureKernel.dll!MobigoSecure::Pattern::ModelFindDetectAndroid2101::_setupEnvironment
+
+WATSON_STAGEONE_URL:  http://watson.microsoft.com/StageOne/MobigoSecureApp.exe/1.0.0.1/5a8e62e2/MSecureKernel.dll/7.1.179.0/5a8e62b0/c0000005/005fcdcc.htm?Retriage=1
+
+TARGET_TIME:  2018-02-22T06:28:56.000Z
+
+OSBUILD:  16299
+
+OSSERVICEPACK:  15
+
+SERVICEPACK_NUMBER: 0
+
+OS_REVISION: 0
+
+SUITE_MASK:  256
+
+PRODUCT_TYPE:  1
+
+OSPLATFORM_TYPE:  x86
+
+OSNAME:  Windows 10
+
+OSEDITION:  Windows 10 WinNt SingleUserTS
+
+OS_LOCALE:  
+
+USER_LCID:  0
+
+OSBUILD_TIMESTAMP:  2031-10-27 11:56:14
+
+BUILDDATESTAMP_STR:  160101.0800
+
+BUILDLAB_STR:  WinBuild
+
+BUILDOSVER_STR:  10.0.16299.64
+
+ANALYSIS_SESSION_ELAPSED_TIME:  5af6
+
+ANALYSIS_SOURCE:  UM
+
+FAILURE_ID_HASH_STRING:  um:null_pointer_write_c0000005_msecurekernel.dll!mobigosecure::pattern::modelfinddetectandroid2101::_setupenvironment
+
+FAILURE_ID_HASH:  {6797609a-35ba-768f-80fa-8ea4b8828036}
+
+Followup:     MachineOwner
+---------
+

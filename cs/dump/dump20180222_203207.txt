@@ -1,0 +1,258 @@
+Opened log file 'D:\dev\github\gamoo\nodes\cs\dump\dump20180222_203207.txt'
+
+Microsoft (R) Windows Debugger Version 10.0.16299.15 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [D:\dev\github\gamoo\nodes\cs\dump\dump20180222_203207.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 16299 MP (8 procs) Free x86 compatible
+Product: WinNt, suite: SingleUserTS
+16299.15.x86fre.rs3_release.170928-1534
+Machine Name:
+Debug session time: Wed Feb 21 16:21:40.000 2018 (UTC + 9:00)
+System Uptime: not available
+Process Uptime: not available
+........................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(7744.7cd4): Access violation - code c0000005 (first/second chance not available)
+eax=00000000 ebx=04be1008 ecx=f6ed0000 edx=ffffffff esi=000002cc edi=04be0ff8
+eip=7732f62c esp=00afddd4 ebp=00afdde0 iopl=0         nv up ei pl nz na pe nc
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
+ntdll!NtGetContextThread+0xc:
+7732f62c c20800          ret     8
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+DUMP_CLASS: 2
+
+DUMP_QUALIFIER: 400
+
+CONTEXT:  (.ecxr)
+.ecxr
+eax=00000000 ebx=00000000 ecx=f6ed0000 edx=ffffffff esi=00e07b54 edi=00e07b54
+eip=00cf1b1d esp=00aff800 ebp=00aff844 iopl=0         nv up ei pl zr na pe nc
+cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010246
+CrashDump2013!wmain+0xd:
+00cf1b1d c7000a000000    mov     dword ptr [eax],0Ah  ds:002b:00000000=????????
+.cxr
+Resetting default scope
+
+FAULTING_IP: 
+CrashDump2013!wmain+d
+00cf1b1d c7000a000000    mov     dword ptr [eax],0Ah
+
+EXCEPTION_RECORD:  (.exr -1)
+.exr -1
+ExceptionAddress: 00cf1b1d (CrashDump2013!wmain+0x0000000d)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 00000001
+   Parameter[1]: 00000000
+Attempt to write to address 00000000
+
+DEFAULT_BUCKET_ID:  NULL_POINTER_WRITE
+
+PROCESS_NAME:  CrashDump2013.exe
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  00000001
+
+EXCEPTION_PARAMETER2:  00000000
+
+FOLLOWUP_IP: 
+CrashDump2013!wmain+d
+00cf1b1d c7000a000000    mov     dword ptr [eax],0Ah
+
+WRITE_ADDRESS:  00000000 
+
+WATSON_BKT_PROCSTAMP:  5a8d11d8
+
+WATSON_BKT_MODULE:  CrashDump2013.exe
+
+WATSON_BKT_MODSTAMP:  5a8d11d8
+
+WATSON_BKT_MODOFFSET:  1b1d
+
+BUILD_VERSION_STRING:  10.0.16299.64 (WinBuild.160101.0800)
+
+MODLIST_WITH_TSCHKSUM_HASH:  5e46a8c422a6a36df043e5432ac185f1709400d6
+
+MODLIST_SHA1_HASH:  644de79f0b12ffe7079c070cfbdbd9c4b3a3ce2a
+
+DUMP_FLAGS:  0
+
+DUMP_TYPE:  2
+
+ANALYSIS_SESSION_HOST:  DESKTOP-MK
+
+ANALYSIS_SESSION_TIME:  02-22-2018 20:32:11.0694
+
+ANALYSIS_VERSION: 10.0.16299.15 amd64fre
+
+THREAD_ATTRIBUTES: 
+PROBLEM_CLASSES: 
+
+    ID:     [0n301]
+    Type:   [@ACCESS_VIOLATION]
+    Class:  Addendum
+    Scope:  BUCKET_ID
+    Name:   Omit
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x7cd4]
+    Frame:  [0] : CrashDump2013!wmain
+
+    ID:     [0n274]
+    Type:   [INVALID_POINTER_WRITE]
+    Class:  Primary
+    Scope:  BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x7cd4]
+    Frame:  [0] : CrashDump2013!wmain
+
+    ID:     [0n289]
+    Type:   [NULL_POINTER_WRITE]
+    Class:  Primary
+    Scope:  DEFAULT_BUCKET_ID (Failure Bucket ID prefix)
+            BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [0x7744]
+    TID:    [0x7cd4]
+    Frame:  [0] : CrashDump2013!wmain
+
+BUGCHECK_STR:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE
+
+PRIMARY_PROBLEM_CLASS:  APPLICATION_FAULT
+
+LAST_CONTROL_TRANSFER:  from 00e07ad7 to 00cf1b1d
+
+STACK_TEXT:  
+00aff7fc 00e07ad7 00000001 02f81b80 02f7dd10 CrashDump2013!wmain+0xd
+00aff844 748c8654 00835000 748c8630 0edf011c CrashDump2013!__tmainCRTStartup+0xfe
+00aff858 77324a77 00835000 4572deb9 00000000 kernel32!BaseThreadInitThunk+0x24
+00aff8a0 77324a47 ffffffff 77349ed7 00000000 ntdll!__RtlUserThreadStart+0x2f
+00aff8b0 00000000 00e07b54 00835000 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+
+THREAD_SHA1_HASH_MOD_FUNC:  75b930724e781b0142982b844cbdf925622672dd
+
+THREAD_SHA1_HASH_MOD_FUNC_OFFSET:  e13951e645de1e6ea047ad4ba671b9b58cd402c1
+
+THREAD_SHA1_HASH_MOD:  45bd14bf2d80c93367b2383a5353e3be7b8ffd9d
+
+FAULT_INSTR_CODE:  a00c7
+
+FAULTING_SOURCE_LINE:  d:\dev\github\gamoo\mfcs\mfcs\crashdump2013\crashdump2013\crashdump2013.cpp
+
+FAULTING_SOURCE_FILE:  d:\dev\github\gamoo\mfcs\mfcs\crashdump2013\crashdump2013\crashdump2013.cpp
+
+FAULTING_SOURCE_LINE_NUMBER:  53
+
+SYMBOL_STACK_INDEX:  0
+
+SYMBOL_NAME:  CrashDump2013!wmain+d
+
+FOLLOWUP_NAME:  MachineOwner
+
+MODULE_NAME: CrashDump2013
+
+IMAGE_NAME:  CrashDump2013.exe
+
+DEBUG_FLR_IMAGE_TIMESTAMP:  5a8d11d8
+
+STACK_COMMAND:  ~0s ; .ecxr ; kb
+
+FAILURE_BUCKET_ID:  NULL_POINTER_WRITE_c0000005_CrashDump2013.exe!wmain
+
+BUCKET_ID:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE_CrashDump2013!wmain+d
+
+FAILURE_EXCEPTION_CODE:  c0000005
+
+FAILURE_IMAGE_NAME:  CrashDump2013.exe
+
+BUCKET_ID_IMAGE_STR:  CrashDump2013.exe
+
+FAILURE_MODULE_NAME:  CrashDump2013
+
+BUCKET_ID_MODULE_STR:  CrashDump2013
+
+FAILURE_FUNCTION_NAME:  wmain
+
+BUCKET_ID_FUNCTION_STR:  wmain
+
+BUCKET_ID_OFFSET:  d
+
+BUCKET_ID_MODTIMEDATESTAMP:  5a8d11d8
+
+BUCKET_ID_MODCHECKSUM:  0
+
+BUCKET_ID_MODVER_STR:  0.0.0.0
+
+BUCKET_ID_PREFIX_STR:  APPLICATION_FAULT_NULL_POINTER_WRITE_INVALID_POINTER_WRITE_
+
+FAILURE_PROBLEM_CLASS:  APPLICATION_FAULT
+
+FAILURE_SYMBOL_NAME:  CrashDump2013.exe!wmain
+
+TARGET_TIME:  2018-02-21T07:21:40.000Z
+
+OSBUILD:  16299
+
+OSSERVICEPACK:  15
+
+SERVICEPACK_NUMBER: 0
+
+OS_REVISION: 0
+
+SUITE_MASK:  256
+
+PRODUCT_TYPE:  1
+
+OSPLATFORM_TYPE:  x86
+
+OSNAME:  Windows 10
+
+OSEDITION:  Windows 10 WinNt SingleUserTS
+
+OS_LOCALE:  
+
+USER_LCID:  0
+
+OSBUILD_TIMESTAMP:  2031-10-27 11:56:14
+
+BUILDDATESTAMP_STR:  160101.0800
+
+BUILDLAB_STR:  WinBuild
+
+BUILDOSVER_STR:  10.0.16299.64
+
+ANALYSIS_SESSION_ELAPSED_TIME:  21c
+
+ANALYSIS_SOURCE:  UM
+
+FAILURE_ID_HASH_STRING:  um:null_pointer_write_c0000005_crashdump2013.exe!wmain
+
+FAILURE_ID_HASH:  {965cdf31-0f93-fbb0-4f27-a7be0c9d6919}
+
+Followup:     MachineOwner
+---------
+

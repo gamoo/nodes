@@ -1,0 +1,3 @@
+D:\dev\github\gamoo\nodes\cs\LinkTextEncodingSample\LinkTextEncodingSample\obj\Debug\LinkTextEncodingSample.njsprojResolveAssemblyReference.cache
+D:\dev\github\gamoo\nodes\cs\LinkTextEncodingSample\LinkTextEncodingSample\obj\Debug\LinkTextEncodingSample.njsproj.CoreCompileInputs.cache
+D:\dev\github\gamoo\nodes\cs\LinkTextEncodingSample\LinkTextEncodingSample\bin\Microsoft.NodejsTools.WebRole.dll

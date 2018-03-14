@@ -18,6 +18,12 @@ var router = express.Router();
 const dumpDir = './dump';
 
 app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'ejs');
+
+// global definition
+app.locals.path = path;
+app.locals.fs = fs;
+
 //app.use(logger);
 //app.use(methodOverride);
 //app.use(router);
@@ -92,7 +98,20 @@ app.get('/dump/:df', (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
+app.get('/', (req,res) => {
+
+    console.log('get');
+    res.setHeader('Content-Type', 'text/html');
+
+    var l = [];
+    require('./fl').walksync(dumpDir,l);
+
+    res.render('list', {title:'Crash Dump Logger', totalCount: l.length, fileList: l});
+
+});
+
+// deprecated
+app.get('/legacy', (req, res) => {
 
     console.log('get');
 
@@ -180,8 +199,8 @@ app.post('/upload/:filename', (req, res) => {
     var date = new Date();
 
     //var newname = name + date.yyyymmddhhmmss() + ext;
-    var newname = name + moment(date).format('YYYYMMDD_HHmmSS') + ext;
-    var newtext = name + moment(date).format('YYYYMMDD_HHmmSS') + ".txt";
+    var newname = name + moment(date).format('YYYYMMDD_HHmmss') + ext;
+    var newtext = name + moment(date).format('YYYYMMDD_HHmmss') + ".txt";
 
     filename = path.resolve(dumpDir, newname);
     

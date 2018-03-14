@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+
+  #maintable td.white {color:#FFF;}  
+
+  </style>
+  <link rel='stylesheet' href='../css/style.css'/>
+</head>
+<body>
+    <div class="containter">
+        <div class="jumbotron text-center">
+                <h2><b><%= title %></b></h2>
+                <br>
+                <p>Total Count = <%= totalCount %></p>
+        </div>
+    </div>
+
+
+
+<div class="container-fluid">
+<table class="table table-bordered table-condensed">
+    <tr style="color: #fff; background: #003366;">
+        <td style="width:10%" align="center"><b>Number</b></td>
+        <td class="col-md-2" align="center"><b>date</b></td>
+        <td class="col-md-1" align="center"><b>time</b></td>
+        <td class="col-md-1" align="center"><b>dump</b></td>
+        <td class="col-md-1" align="center"><b>log</b></td>
+        <td class="col-md-1" align="center"><b>file</b></td>
+        <td style="width:50%" class="col-md-1" bgcolor="#0066cc" align="center"><b>line</b></td>
+    </tr>
+
+<%
+    
+     for(var i=0; i< totalCount; i++)
+     {
+        var f = fileList[i];
+        var b = path.basename(f);
+        var line = '';
+
+        if (path.parse(f).ext.toLowerCase() == '.txt') {
+
+            var txtFile = './dump/' + path.basename(f);
+
+            var content = fs.readFileSync(txtFile);
+
+            var arr = content.toString().split("\n");
+
+            arr.forEach((l) => {
+
+                if (l.indexOf('FAULTING_SOURCE_LINE') > -1) {
+                   line = line + l;
+                } else if (l.indexOf('FAULTING_SOURCE_FILE') > -1) {
+                   line = line + l;
+                }
+
+            });
+        }
+        
+%>
+    <tr>
+        <td align="center"><%= i %></td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td><a href="./dump/<%=b%>" ><%=b%></a></td>
+        <td>.</td>
+        <td>.</td>
+        <td><% line %></td>
+    </tr>
+
+<%
+     }
+%>
+</table>
+</div>
+</body>
+</html>

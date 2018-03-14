@@ -1,0 +1,3 @@
+D:\dev\github\gamoo\nodes\console\ipv4check\ipv4check\obj\Debug\ipv4check.njsprojResolveAssemblyReference.cache
+D:\dev\github\gamoo\nodes\console\ipv4check\ipv4check\obj\Debug\ipv4check.njsproj.CoreCompileInputs.cache
+D:\dev\github\gamoo\nodes\console\ipv4check\ipv4check\bin\Microsoft.NodejsTools.WebRole.dll
